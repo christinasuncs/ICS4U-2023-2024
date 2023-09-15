@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Homework 4</title>
+    <style>
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .item{
+            background-color: azure;
+            border: 1px solid steelblue;
+            width: 250px;
+            height: 300px;
+        }
+
+        @media (max-width: 768px){
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt recusandae dicta, laboriosam nostrum rerum impedit minus ad eveniet ipsam ipsum!</div>
+        <div class="item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure et nam vitae provident voluptates eum autem magni quia culpa eligendi.</div>
+        <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas modi dignissimos fugiat veritatis ab a quia at et illo quasi?</div>
+    </div>
+</body>
+</html>
