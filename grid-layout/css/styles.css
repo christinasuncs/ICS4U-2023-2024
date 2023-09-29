@@ -1,0 +1,26 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin: 20px;
+    background-color: aliceblue;
+    border: navy 1px;
+}
+
+.item {
+    padding: 20px;
+    background-color: #aaa;
+    border: 1px black;
+}
+
+@media (max-width: 768px){
+    .container{
+        flex-direction: column;
+    }
+}

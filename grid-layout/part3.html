@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Learning Worksheet</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 50px;
+        }
+
+        .grid-item {
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .flex-item {
+            background-color: #ddd;
+            margin: 5px;
+            padding: 5px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+        <div class="grid-container">
+    <div class="grid-item">
+        <div class="flex-container">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="flex-container">
+        <div class="flex-item">Item 4</div>
+        <div class="flex-item">Item 5</div>
+        </div>
+    </div>
+    </div>
+
+</body>
+</html>
