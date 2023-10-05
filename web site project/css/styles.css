@@ -105,6 +105,8 @@ aside#side-col{
     float: right;
     width: 60%;
     text-align: center;
+    margin: 10px;
+    border: 10px;
 }
 
 /* Main-col */
@@ -112,27 +114,33 @@ article#main-col{
     float: left;
     width: 35%;
     text-align: center;
+    margin: 10px;
 }
 
 /* Grid */
-grid-container{
+.grid-container{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    grid-template-rows: auto;
     grid-gap: 10px;
+    border: 10px;
 }
 
-grid-items{
-    padding: 10px;
+.grid-items{
+    padding: 50px;
     text-align: center;
 }
 
-form{    
+/* Boxes */
+#boxes{
+    margin-top: 20px;
+}
+
+#boxes .box{
     float: left;
-    width: 35%;
     text-align: center;
+    width: 45%;
+    padding: 10px;
 }
-
 
 
 /* Footer */
@@ -144,11 +152,12 @@ footer{
     text-align: center;
 }
 
-.social{
+.socials{
     text-align: center;
+    flex-direction: row;
 }
 
-.social ul li {
+.socials ul li {
 	display: inline;
 	margin: 0 5px;
 }
