@@ -172,7 +172,7 @@ footer{
 /* Media Queries */
 @media(max-width: 768px){
     header #branding,
-    haeder nav,
+    header nav,
     header nav li,
     #boxes .box,
     article#main-col,
