@@ -12,18 +12,21 @@ body{
     text-align: center;
 }
 
-ul{
+.ul{
     margin: 0;
     padding: 0;
 }
 
 .button_1{
     height: 38px;
-    background: #641448;
-    border: 0;
+    background: #FF858D;
     padding-left: 20px;
     padding-right: 20px;
-    color: #FF858D;
+    color: #641448;
+}
+
+.button_1:hover{
+    background-color: #faacb1;
 }
 
 a{
@@ -93,11 +96,12 @@ header a:hover{
 }
 
 /* Showcase */
-showcase{    
-    margin-top: 100px;
-    font-size: 55px;
-    margin: 50px;
+#showcase{    
     text-align: center;
+    min-height: 950px;
+    background: url('../img/team.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 /* Sidebar */
@@ -120,14 +124,23 @@ article#main-col{
 /* Grid */
 .grid-container{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: 100px;
     grid-gap: 10px;
-    border: 10px;
+    margin: 10px;
 }
 
 .grid-items{
     padding: 50px;
     text-align: center;
+    width: 100px;
+}
+
+.models{
+    display: grid;
+}
+
+.model img{
+    width: 300px;
 }
 
 /* Boxes */
@@ -142,11 +155,18 @@ article#main-col{
     padding: 10px;
 }
 
+/* Cards */
+.cards{
+    background-color: #eee;
+    margin: 10px;
+    border: #000 5px;
+}
+
 
 /* Footer */
 footer{
     padding: 20px;
-    margin: 20px;
+    /* margin: 20px; */
     color: #000;
     background-color: #FF858D;
     text-align: center;
