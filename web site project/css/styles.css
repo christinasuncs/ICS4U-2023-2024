@@ -55,6 +55,7 @@ header{
     border-bottom: #FF858D 5px solid;
 }
 
+/* Header Links */
 header a{
     color: #641448;
     text-decoration: none;
@@ -95,13 +96,27 @@ header a:hover{
     color: #FF858D;
 }
 
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    background-color: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
 /* Showcase */
-#showcase{    
+#showcase img{    
     text-align: center;
-    min-height: 950px;
-    background: url('../img/team.jpg') no-repeat;
+    width: -webkit-fill-available;
+    /* background: url('../img/team.jpg') no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
 }
 
 /* Sidebar */
@@ -137,29 +152,68 @@ article#main-col{
 
 .models{
     display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.model{
+    margin: 20px;
 }
 
 .model img{
-    width: 300px;
+    height: 400px;
 }
 
-/* Boxes */
+/* Boxes for Programs*/
 #boxes{
     margin-top: 20px;
 }
 
-#boxes .box{
-    float: left;
+#boxes .box-1{
+    /* float: left; */
+    text-align: center;
+    width: 45%;
+    padding: 10px;
+    align-items: center;
+}
+
+#boxes .box-2{
+    /* float: right; */
     text-align: center;
     width: 45%;
     padding: 10px;
 }
 
-/* Cards */
+.box-2 img{
+    width: 30%;
+    margin: 20px;
+}
+
+/* Cards for Faculty*/
+.founder-card{
+    width: 500px;
+    margin: 20px;
+    text-align: center;
+}
+
+.founder-card img{
+    width: 500px;
+}
+
 .cards{
-    background-color: #eee;
-    margin: 10px;
-    border: #000 5px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+}
+
+.faculty-card{
+    width: 500px;
+    list-style-type: none;
+    margin: 20px;
+    text-align: center;
+}
+
+.faculty-card img{
+    width: 300px;
 }
 
 
@@ -208,5 +262,62 @@ footer{
 
     #showcase h1{
         margin-top: 40px;
+    }
+
+    #showcase{
+        background-position: center;
+        background-size: cover;
+        min-height: 250px;
+    }
+}
+
+@media(max-width: 900px){
+    .models{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .cards{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media(max-width: 500px){
+    .models{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+/* Hamburger Menu */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .menu-open .nav {
+        display: flex;
+    }
+
+    .menu-open .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-open .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 }
