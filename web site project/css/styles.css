@@ -105,6 +105,7 @@ header #branding h1{
     margin: 0;
 }
 
+/* navbar */
 .nav{
     float: right;
     margin-top: 10px;
@@ -122,6 +123,7 @@ header #branding h1{
     transition: 0.5s;
 }
 
+/* hamburger menu */
 .hamburger{
     position: absolute;
     width: 30px;
@@ -187,6 +189,7 @@ header #branding h1{
     right: 0;
 }
 
+/* header */
 header .current a{
     color: #FF858D;
     font-weight: bold;
@@ -202,7 +205,7 @@ header a:hover{
     width: -webkit-fill-available;
 }
 
-/* Join Us */
+/* Join Us Sections */
 #main{
     display: flex;
     width: 100%;
@@ -210,34 +213,15 @@ header a:hover{
 }
 
 #main-col{
-    /* width: 35%; */
     flex: 1;
 }
 
 #side-col{
     flex: 2;
-    /* width: 60%; */
     text-align: center;
     margin: 10px;
     border: 10px;
 }
-
-/* Sidebar */
-/* #side-col{
-    flex: 1;
-    width: 60%;
-    text-align: center;
-    margin: 10px;
-    border: 10px;
-} */
-
-/* Main-col */
-/* #main-col{
-    flex: 2;
-    width: 35%;
-    text-align: center;
-    margin: 10px;
-} */
 
 /* Models Page Grid */
 .models{
@@ -252,7 +236,7 @@ header a:hover{
 }
 
 .model img{
-    width: 80%;
+    width: 90%;
 }
 
 /* Boxes for Programs*/
@@ -322,6 +306,7 @@ footer{
     text-align: center;
 }
 
+/* Social Medias in Footer */
 .socials{
     text-align: center;
     flex-direction: row;
@@ -385,10 +370,6 @@ footer{
 
     .program-1, .program-2{
         flex-direction: column;
-    }
-
-    .models{
-        grid-template-columns: repeat(1,1fr);
     }
 }
 
