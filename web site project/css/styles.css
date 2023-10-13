@@ -125,7 +125,7 @@ header #branding h1{
 
 /* hamburger menu */
 .hamburger{
-    position: absolute;
+    position: fixed;
     width: 30px;
     height: 4px;
     background-color: #641448;
