@@ -46,6 +46,29 @@ a:hover{
     margin-bottom: 20px;
 }
 
+input, select {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  textarea {
+    width:68%;
+    resize: vertical;
+    padding:15px;
+    border-radius:15px;
+    border:0;
+    height:150px;
+  }
+
+form{
+    text-align: center;
+}
+
 /* Header */
 header{
     background-color: #fff;
@@ -114,42 +137,42 @@ header a:hover{
 #showcase img{    
     text-align: center;
     width: -webkit-fill-available;
-    /* background: url('../img/team.jpg') no-repeat;
-    background-position: center;
-    background-size: cover; */
+}
+
+/* Join Us */
+#main{
+    display: flex;
+    width: 100%;
+}
+
+#main-col{
+    flex: 1;
+}
+
+#side-col{
+    flex: 2;
+    text-align: center;
+    margin: 20px;
 }
 
 /* Sidebar */
-aside#side-col{
-    float: right;
+/* #side-col{
+    flex: 1;
     width: 60%;
     text-align: center;
     margin: 10px;
     border: 10px;
-}
+} */
 
 /* Main-col */
-article#main-col{
-    float: left;
+/* #main-col{
+    flex: 2;
     width: 35%;
     text-align: center;
     margin: 10px;
-}
+} */
 
-/* Grid */
-.grid-container{
-    display: grid;
-    grid-template-columns: 100px;
-    grid-gap: 10px;
-    margin: 10px;
-}
-
-.grid-items{
-    padding: 50px;
-    text-align: center;
-    width: 100px;
-}
-
+/* Models Page Grid */
 .models{
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -160,16 +183,45 @@ article#main-col{
 }
 
 .model img{
-    height: 400px;
+    width: 80%;
 }
 
 /* Boxes for Programs*/
-#boxes{
+.program-1{
+    display: flex;
+    margin: 10px;
+}
+
+.p1text{
+    flex: 1;
+    margin: 20px;
+}
+
+.program-1 img{
+    width: 40%;
+}
+
+.program-2{
+    display: flex;
+    margin: 10px;
+}
+
+.p2text{
+    flex: 1;
+    margin: 20px;
+}
+
+.program-2 img{
+    width: 40%;
+}
+
+
+/* #boxes{
     margin-top: 20px;
+    display: flex;
 }
 
 #boxes .box-1{
-    /* float: left; */
     text-align: center;
     width: 45%;
     padding: 10px;
@@ -177,26 +229,25 @@ article#main-col{
 }
 
 #boxes .box-2{
-    /* float: right; */
     text-align: center;
     width: 45%;
     padding: 10px;
 }
 
 .box-2 img{
-    width: 30%;
+    width: 50%;
     margin: 20px;
-}
+} */
 
 /* Cards for Faculty*/
 .founder-card{
-    width: 500px;
+    width: 90%;
     margin: 20px;
     text-align: center;
 }
 
 .founder-card img{
-    width: 500px;
+    width: 60%;
 }
 
 .cards{
@@ -206,14 +257,14 @@ article#main-col{
 }
 
 .faculty-card{
-    width: 500px;
+    width: 90%;
     list-style-type: none;
     margin: 20px;
     text-align: center;
 }
 
 .faculty-card img{
-    width: 300px;
+    width: 60%;
 }
 
 
@@ -249,8 +300,8 @@ footer{
     header nav,
     header nav li,
     #boxes .box,
-    article#main-col,
-    aside#sidebar{
+    #main-col,
+    #sidebar{
         float: none;
         text-align: center;
         width: 100%;
@@ -269,7 +320,27 @@ footer{
         background-size: cover;
         min-height: 250px;
     }
-}
+
+    /* Hamburger Menu */
+    @media screen and (max-width: 600px) {
+        .nav a:not(:first-child) {display: none;}
+        .nav a.icon {
+          float: right;
+          display: block;
+        }
+        .nav.responsive {position: relative;}
+        .nav.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+        .nav.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+      }
+    }
 
 @media(max-width: 900px){
     .models{
@@ -287,37 +358,3 @@ footer{
     }
 }
 
-/* Hamburger Menu */
-@media screen and (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
-
-    .nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        background-color: #333;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        padding: 10px 0;
-    }
-
-    .menu-open .nav {
-        display: flex;
-    }
-
-    .menu-open .bar:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .menu-open .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-open .bar:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
-}
