@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blue{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p id="test">
+        Hello
+    </p>
+
+    <p class="sample">
+
+    </p>
+
+</body>
+<script>
+    const pTags = document.querySelectorAll('.sample')
+    const pTags1 = document.querySelectorAll('p')
+    const pTags2 = document.querySelectorAll('p#test')
+    const pTags3 = document.querySelector('#test')
+
+    pTags2[0].classList.add('blue')
+    pTags[0].textContent = "Hello World"
+    pTags[0].innerHTML = '<span>Hello World</span>'
+
+    const newDiv = document.createElement('div')
+    newDiv.appendChild(pTags[0])
+
+    document.querySelector('body').appendChild(newDiv)
+    pTags2[0].remove() //removes the element
+</script>
+</html>

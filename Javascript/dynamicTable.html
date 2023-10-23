@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+
+    <section class="section">
+        <div class="container">
+            <select id="teamFilter"></select>
+        </div>
+    </section>
+
+    <table id="standings" class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>W</th>
+            <th>L</th>
+            <th>PTS</th>
+        </tr>
+
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+<script>
+    const teams = [
+        {name: 'Maple Leafs', W:3, L:2, PTS:6},
+        {name: 'Canadians', W:2, L:3, PTS:4},
+        {name: 'Maxamilians', W:0, L:5, PTS:0},
+        {name: 'Cyrusolia', W:0, L:5, PTS:0},
+    ]
+
+    function updateStanding(teamArray){
+        for (let index = 0; index < teamArray.length; index++) {
+            const team = teamArray[index];
+            
+            const row = document.createElement('tr')
+            let td = document.createElement('td')
+            td.textContent = team.name;
+            row.appendChild(td)
+
+            td = document.createElement('td')
+            td.textContent = team.W;
+            row.appendChild(td)
+
+            td = document.createElement('td')
+            td.textContent = team.L;
+            row.appendChild(td)
+
+            td = document.createElement('td')
+            td.textContent = team.PTS;
+            row.appendChild(td)
+
+            const tableBody = document.querySelector('tbody')
+            tableBody.appendChild(row)
+        }
+    }
+
+    function createSelect(teamArray){
+        const select = document.querySelector('select')
+        for (let index = 0; index < teamArray.length; index++) {
+            const element = teamArray[index];
+            
+            let option = document.createElement('option')
+            option.innerText = team.name
+            option.value = team.name
+
+            select.appendChild(option)
+        }
+    }
+
+    updateStanding(teams)
+
+    //picklist
+    createSelect(teams)
+
+</script>
+</html>
