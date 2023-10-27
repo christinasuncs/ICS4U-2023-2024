@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Problem 1
+        // You have an array of objects, where each object represents a student with properties name and score. Write a function that uses the filter and map functions to create a new array containing the names of students who scored above 80 and doubles their scores.
+
+        // const students = [
+        //     { name: 'Alice', score: 75 },
+        //     { name: 'Bob', score: 92 },
+        //     { name: 'Charlie', score: 88 },
+        //     { name: 'David', score: 60 },
+        //     { name: 'Eve', score: 78 },
+        // ];
+
+        // const aboveEighty = students
+        // .filter(student => (student.score > 80))
+        // .map(student => student.score * 2)
+        // console.log(aboveEighty)
+
+        // Problem 2
+        // You have an array of objects representing scores in a baseball game. Each object has properties team and score. Write a function that uses the reduce function to find the team with the highest score.
+
+        const scores = [
+            { team: 'A', score: 7 },
+            { team: 'B', score: 12 },
+            { team: 'C', score: 8 },
+            { team: 'D', score: 9 },
+            { team: 'E', score: 11 },
+        ];
+
+        const highest = scores.reduce((a,b) => (a.score > b.score) ? a : b);
+        console.log(highest)
+
+
+        // Problem 3
+        // You have an array of objects representing products in a store. Each object has properties name and category. Write a function that uses the forEach function to count how many products belong to each category and store the results in an object.
+
+        const products = [
+            { name: 'Laptop', category: 'Electronics' },
+            { name: 'Shoes', category: 'Fashion' },
+            { name: 'Camera', category: 'Electronics' },
+            { name: 'Jeans', category: 'Fashion' },
+            { name: 'Microwave', category: 'Electronics' },
+        ];
+
+        const results = {};
+
+        const arr = products.forEach((element) => {
+            if(results[element.category]){
+                results[element.category]++
+            }
+            else{
+                results[element.category] = 1;
+            }
+            // console.log(results)
+            // return results
+        })
+        console.log(results)
+
+        // Problem 4
+        // You have an array of student objects, each containing properties name and score. Write a function that uses the sort function to sort the students in descending order of their scores. If two students have the same score, sort them alphabetically by their names.
+
+        const students = [
+            { name: 'Alice', score: 78 },
+            { name: 'Bob', score: 92 },
+            { name: 'Charlie', score: 88 },
+            { name: 'David', score: 60 },
+            { name: 'Eve', score: 78 },
+        ];
+
+        const highestScore = students
+        .sort((a,b) => {
+            if (a.score === b.score){
+                a.name.localeCompare(b.name)
+            }
+            return b.score - a.score
+        })
+        console.log(highestScore)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
