@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const arrNum = [1, 5, 2, 76, 35, 97, 34, 136,8]
+        const arrObs = [
+            {name: "Tom", age: "17", height: "185"},
+            {name: "Charlie", age: "23", height: "177"},
+            {name: "Sally", age: "15", height: "163"},
+            {name: "Yolanda", age: "16", height: "190"},
+            {name: "Alan", age: "18", height: "193"},
+            {name: "Will", age: "19", height: "177"},
+            {name: "Tristan", age: "17", height: "130"},
+            {name: "Leslie", age: "16", height: "190"},
+            {name: "Sebastian", age: "16", height: "183"},
+            {name: "Erin", age: "16", height: "153"},
+            {name: "Isabella", age: "16", height: "190"},
+            {name: "Jade", age: "16", height: "189"}
+        ]
+
+        // forEach
+        // arrNum.forEach(x => console.log(x)) // just print each el
+        // arrNum.forEach((x, ind) => console.log(`index:${ind}, element:${x}`)) // index and element
+
+        // filter
+        // const newArr = arrNum.filter(x => x % 2 === 0) // even only
+        // const newArr = arrNum.filter(x => x > 10) // greater than 10
+        // console.log(newArr)
+
+        // sort
+        // const newArr = arrNum.sort((a,b) => a - b) // sort small to big
+        // console.log(newArr)
+
+        // map
+        // let newArr = []
+        // // newArr = arrNum.map(x => x*2) // make new array with doubled values
+        // newArr = arrObs.map(x => x.height)
+        // console.log(newArr)
+
+        // reduce
+        // let newArr = []
+        // newArr = arrNum.reduce((a,b) => a+b)
+        // console.log(newArr)
+
+        // using multiple at once
+        // let newArrNum = []
+        // newArrNum = arrNum // only even, from small to big, console log
+        // .filter(x => x % 2 === 0)
+        // .sort((a,b) => a - b)
+        // .forEach(x => console.log(x))
+        // let newArrObj = [] // get ages, sort young to old
+        // newArrObj = arrObs
+        // .map(x => x.age)
+        // .sort((a,b) => a-b)
+        // console.log(newArrObj)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
