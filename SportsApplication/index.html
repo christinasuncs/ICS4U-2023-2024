@@ -100,38 +100,37 @@
     function sortColumn(col){
         let sortOrder = col.getAttribute("sortOrder")
         let id = col.getAttribute("id")
-        if (id === "name"){
+        if (id === "playerName"){
             if (sortOrder == "asc"){
                 scoreData.sort((a,b) => a.name.localeCompare(b.name))
-                document.querySelector("#name").setAttribute('sortOrder', "des")
+                document.querySelector("#playerName").setAttribute('sortOrder', "des")
             }else{
                 scoreData.sort((a,b)=>b.name.localeCompare(a.name))
-                document.querySelector("#name").setAttribute('sortOrder', "asc")
-                console.log("name dec")
+                document.querySelector("#playerName").setAttribute('sortOrder', "asc")
             }
-        }else if (id === "time"){
+        }else if (id === "playerTime"){
             if (sortOrder == "asc"){
                 scoreData.sort((a,b) => a.time.localeCompare(b.time))
-                document.querySelector("#time").setAttribute('sortOrder', "des")
+                document.querySelector("#playerTime").setAttribute('sortOrder', "des")
             }else{
                 scoreData.sort((a,b)=>b.time.localeCompare(a.time))
-                document.querySelector("#time").setAttribute('sortOrder', "asc")
+                document.querySelector("#playerTime").setAttribute('sortOrder', "asc")
             }
-        }else if (id === "country"){
+        }else if (id === "playerCountry"){
             if (sortOrder == "asc"){
                 scoreData.sort((a,b) => a.country.localeCompare(b.country))
-                document.querySelector("#country").setAttribute('sortOrder', "des")
+                document.querySelector("#playerCountry").setAttribute('sortOrder', "des")
             }else{
                 scoreData.sort((a,b)=>b.country.localeCompare(a.country))
-                document.querySelector("#country").setAttribute('sortOrder', "asc")
+                document.querySelector("#playerCountry").setAttribute('sortOrder', "asc")
             }
-        }else if (id === "vehicle"){
+        }else if (id === "playerVehicle"){
             if (sortOrder == "asc"){
                 scoreData.sort((a,b) => a.vehicle.localeCompare(b.vehicle))
-                document.querySelector("#vehicle").setAttribute('sortOrder', "des")
+                document.querySelector("#playerVehicle").setAttribute('sortOrder', "des")
             }else{
                 scoreData.sort((a,b)=>b.vehicle.localeCompare(a.vehicle))
-                document.querySelector("#vehicle").setAttribute('sortOrder', "asc")
+                document.querySelector("#playerVehicle").setAttribute('sortOrder', "asc")
             }
         }
         updateTable()
