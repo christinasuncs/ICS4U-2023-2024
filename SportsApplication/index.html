@@ -30,261 +30,136 @@
 
     <table id="raceTable">
         <thead>
-            <th>Name</th>
-            <th>Time</th>
-            <th>Nationality</th>
-            <th>Vehicle</th>
+            <th id="playerName" sortOrder="">Name</th>
+            <th id="playerTime" sortOrder="">Time</th>
+            <th id="playerCountry" sortOrder="">Nationality</th>
+            <th id="playerVehicle" sortOrder="">Vehicle</th>
         </thead>
-        <tbody id="raceRow"></tbody>
+        <tbody id="raceRow">
+
+        </tbody>
     </table>
 
     <script>
-    // const form = document.getElementById('raceForm');
-    // const list = document.getElementById('raceList');
-    // const table = document.getElementById('raceTable');
-    // const tbody = document.getElementById('raceRow');
-
-    // // Check if local storage has existing scores
-    // let scoreData = JSON.parse(localStorage.getItem('scoreData')) || [];
-
-    // // Function to update the table and save to local storage
-    // function updateTable() {
-    //     tbody.innerHTML = ''; // Clear existing rows
-
-    //     scoreData.forEach((time) => {
-    //         const row = document.createElement('tr');
-    //         row.innerHTML = `<td>${time.name}</td><td>${time.time}</td><td>${time.country}</td><td>${time.vehicle}</td>`;
-    //         tbody.appendChild(row);
-    //     });
-
-    //     localStorage.setItem('scoreData', JSON.stringify(scoreData));
-    // }
-
-    // // Function to add game scores from the form
-    // form.addEventListener('submit', (e) => {
-    //     e.preventDefault();
-
-    //     const nameInput = document.getElementById('name');
-    //     const timeInput = document.getElementById('time');
-    //     const countryInput = document.getElementById('country');
-    //     const vehicleInput = document.getElementById('vehicle');
-
-    //     const name = nameInput.value;
-    //     const time = timeInput.value;
-    //     const country = countryInput.value;
-    //     const vehicle = vehicleInput.value;
-
-    //     const result = { name, time, country, vehicle };
-    //     scoreData.push(result);
-    //     nameInput.value = '';
-    //     timeInput.value = '';
-    //     countryInput.value = '';
-    //     vehicleInput.value = '';
-    //     updateList();
-    //     updateTable();
-    // });
-
-    // // Function to update the list
-    // function updateList() {
-    //     list.innerHTML = '';
-    //     scoreData.forEach((time, index) => {
-    //         const listItem = document.createElement('li');
-    //         listItem.innerHTML = `<span>${time.name}: ${time.time} - ${time.country}, ${time.vehicle} -</span> <a href="#" onclick="removeScore(${index})">Remove</a>`;
-    //         list.appendChild(listItem);
-    //     });
-    // }
-
-    // // Function to remove a score from the list
-    // function removeScore(index) {
-    //     scoreData.splice(index, 1);
-    //     updateList();
-    //     updateTable();
-    // }
-
     const form = document.getElementById('raceForm');
-const list = document.getElementById('raceList');
-const table = document.getElementById('raceTable');
-const tbody = document.getElementById('raceRow');
-
-// Check if local storage has existing scores
-let scoreData = JSON.parse(localStorage.getItem('scoreData')) || [];
-
-// Function to add game scores from the form
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const nameInput = document.getElementById('name');
-    const timeInput = document.getElementById('time');
-    const countryInput = document.getElementById('country');
-    const vehicleInput = document.getElementById('vehicle');
-
-    const name = nameInput.value;
-    const time = timeInput.value;
-    const country = countryInput.value;
-    const vehicle = vehicleInput.value;
-
-    const result = { name, time, country, vehicle };
-    scoreData.push(result);
-    nameInput.value = '';
-    timeInput.value = '';
-    countryInput.value = '';
-    vehicleInput.value = '';
-    updateList();
-    updateTable();
-});
-
-// Function to update the table and save to local storage
-function updateTable() {
-    tbody.innerHTML = ''; // Clear existing rows
-
-    scoreData.forEach((time) => {
-        const row = document.createElement('tr');
-        row.innerHTML = `<td>${time.name}</td><td>${time.time}</td><td>${time.country}</td><td>${time.vehicle}</td>`;
-        tbody.appendChild(row);
-    });
-
-    localStorage.setItem('scoreData', JSON.stringify(scoreData));
-
-    // Initialize DataTables on the table
-    // if (!table.hasAttribute('data-initialized')) {
-    //     // Check if DataTables is not already initialized on the table
-    //     table.setAttribute('data-initialized', 'true'); // Set a flag to prevent reinitialization
-    //     const raceTable = new DataTable(table);
-    // }
-}
-
-function addListeners() {
-    const headers = document.getElementsByTagName('th');
-
-    Array.from(headers).forEach((header, index) => {
-        let isAscending = true;
-
-        header.addEventListener('click', function () {
-            sortColumn(index, isAscending);
-            isAscending = !isAscending; // Toggle the sorting order
-        });
-    });
-}
-
-function sortColumn(columnIndex, isAscending) {
-    // Get all rows in the tbody
-    const rows = Array.from(document.getElementById('raceRow').getElementsByTagName('tr'));
-
-    // Sort the rows based on the content of the selected column
-    rows.sort((a, b) => {
-        const aValue = a.getElementsByTagName('td')[columnIndex].textContent;
-        const bValue = b.getElementsByTagName('td')[columnIndex].textContent;
-
-        // Use the localeCompare function to handle string comparison
-        const comparison = aValue.localeCompare(bValue, undefined, { numeric: true, sensitivity: 'base' });
-
-        // Toggle the order based on the 'isAscending' flag
-        return isAscending ? comparison : -comparison;
-    });
-
-    // Update the tbody with the sorted rows
+    const list = document.getElementById('raceList');
+    const table = document.getElementById('raceTable');
     const tbody = document.getElementById('raceRow');
-    tbody.innerHTML = '';
-    rows.forEach(row => {
-        tbody.appendChild(row);
+
+    // Check if local storage has existing scores
+    let scoreData = JSON.parse(localStorage.getItem('scoreData')) || [];
+
+    // Function to add game scores from the form
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const nameInput = document.getElementById('name');
+        const timeInput = document.getElementById('time');
+        const countryInput = document.getElementById('country');
+        const vehicleInput = document.getElementById('vehicle');
+
+        const name = nameInput.value;
+        const time = timeInput.value;
+        const country = countryInput.value;
+        const vehicle = vehicleInput.value;
+
+        const result = { name, time, country, vehicle };
+        scoreData.push(result);
+        nameInput.value = '';
+        timeInput.value = '';
+        countryInput.value = '';
+        vehicleInput.value = '';
+        updateList();
+        updateTable();
     });
-}
+
+    // Function to update the table and save to local storage
+    function updateTable() {
+        tbody.innerHTML = ''; // Clear existing rows
+
+        scoreData.forEach((race) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `<td>${race.name}</td><td>${race.time}</td><td>${race.country}</td><td>${race.vehicle}</td>`;
+            tbody.appendChild(row);
+        });
+    }
 
 
+    function addSortToHeaders(){
+        const headers = document.querySelectorAll("th");
+        headers.forEach(header =>{
+            header.addEventListener('click', (el) => {
+                element = el.target;
+                sortColumn(element)
+            })
+        })
+    }
 
-// Function to update the list
-function updateList() {
-    list.innerHTML = '';
-    scoreData.forEach((time, index) => {
-        const listItem = document.createElement('li');
-        listItem.innerHTML = `<span>${time.name}: ${time.time} - ${time.country}, ${time.vehicle} -</span> <a href="#" onclick="removeScore(${index})">Remove</a>`;
-        list.appendChild(listItem);
-    });
-}
+    addSortToHeaders();
 
-// Function to remove a score from the list
-function removeScore(index) {
-    scoreData.splice(index, 1);
+    function sortColumn(col){
+        let sortOrder = col.getAttribute("sortOrder")
+        let id = col.getAttribute("id")
+        if (id === "name"){
+            if (sortOrder == "asc"){
+                scoreData.sort((a,b) => a.name.localeCompare(b.name))
+                document.querySelector("#name").setAttribute('sortOrder', "des")
+            }else{
+                scoreData.sort((a,b)=>b.name.localeCompare(a.name))
+                document.querySelector("#name").setAttribute('sortOrder', "asc")
+                console.log("name dec")
+            }
+        }else if (id === "time"){
+            if (sortOrder == "asc"){
+                scoreData.sort((a,b) => a.time.localeCompare(b.time))
+                document.querySelector("#time").setAttribute('sortOrder', "des")
+            }else{
+                scoreData.sort((a,b)=>b.time.localeCompare(a.time))
+                document.querySelector("#time").setAttribute('sortOrder', "asc")
+            }
+        }else if (id === "country"){
+            if (sortOrder == "asc"){
+                scoreData.sort((a,b) => a.country.localeCompare(b.country))
+                document.querySelector("#country").setAttribute('sortOrder', "des")
+            }else{
+                scoreData.sort((a,b)=>b.country.localeCompare(a.country))
+                document.querySelector("#country").setAttribute('sortOrder', "asc")
+            }
+        }else if (id === "vehicle"){
+            if (sortOrder == "asc"){
+                scoreData.sort((a,b) => a.vehicle.localeCompare(b.vehicle))
+                document.querySelector("#vehicle").setAttribute('sortOrder', "des")
+            }else{
+                scoreData.sort((a,b)=>b.vehicle.localeCompare(a.vehicle))
+                document.querySelector("#vehicle").setAttribute('sortOrder', "asc")
+            }
+        }
+        updateTable()
+    }
+    
+    // Function to update the list
+    function updateList() {
+        list.innerHTML = '';
+        scoreData.forEach((time, index) => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `<span>${time.name}: ${time.time} - ${time.country}, ${time.vehicle} -</span> <a href="#" onclick="removeScore(${index})">Remove</a>`;
+            list.appendChild(listItem);
+        });
+        // addSortToHeaders();
+    }
+
+    // Function to remove a score from the list
+    function removeScore(index) {
+        scoreData.splice(index, 1);
+        updateList();
+        updateTable();
+    }
+
+    // Initial list population
     updateList();
     updateTable();
-}
-
-// Initial list population
-updateList();
-updateTable();
-addListeners();
+    // addListeners();
 
     </script>
-
-
-    <!-- Table -->
-    <!-- <table>
-        <tr>
-            <th>Name</th>
-            <th>Time</th>
-            <th>Nationality</th>
-            <th>Vehicle</th>
-        </tr>
-        <tr>
-            <th>Tom</th>
-            <th>3:27:41</th>
-            <th>GBR</th>
-            <th>Truck</th>
-        </tr>
-        <tr>
-            <th>Bill</th>
-            <th>3:54:23</th>
-            <th>USA</th>
-            <th>Car</th>
-        </tr>
-        <tr>
-            <th>Will</th>
-            <th>3:59:01</th>
-            <th>CAN</th>
-            <th>Truck</th>
-        </tr>
-        <tr>
-            <th>Andy</th>
-            <th>4:21:09</th>
-            <th>AUS</th>
-            <th>Bike</th>
-        </tr>
-        <tr>
-            <th>Chad</th>
-            <th>4:43:51</th>
-            <th>USA</th>
-            <th>Car</th>
-        </tr>
-        <tr>
-            <th>Derek</th>
-            <th>4:56:27</th>
-            <th>CAN</th>
-            <th>Bike</th>
-        </tr>
-        <tr>
-            <th>Egg</th>
-            <th>5:08:19</th>
-            <th>CAN</th>
-            <th>Bike</th>
-        </tr>
-        <tr>
-            <th>Fred</th>
-            <th>5:34:09</th>
-            <th>CHN</th>
-            <th>Truck</th>
-        </tr>
-        <tr>
-            <th>Greg</th>
-            <th>5:46:14</th>
-            <th>CAN</th>
-            <th>Car</th>
-        </tr>
-        <tr>
-            <th>Harold</th>
-            <th>5:55:12</th>
-            <th>USA</th>
-            <th>Truck</th>
-        </tr>
-    </table> -->
     </body>
 </html>
