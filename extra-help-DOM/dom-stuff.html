@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="test">
+        <p class="blue"></p>
+        <p class="green"></p>
+    </div>
+
+    <table id="standings">
+        <thead>
+            <tr>
+                <th id="name">Name</th>
+                <th id="wins">W</th>
+                <th id="loses" sortOrder = "ASC">L</th>
+                <th id="PTS">PTS</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        const div = document.querySelector('#test')
+        console.log();
+
+        
+    const teams = [
+        {name: 'Maple Leafs', W:3, L:2, PTS:6},
+        {name: 'Canadians', W:2, L:3, PTS:4},
+        {name: 'Maxamilians', W:0, L:5, PTS:0},
+        {name: 'Cyrusolia', W:0, L:4, PTS:0},
+    ]
+
+    function createTable(teams){
+        const tbody = document.querySelector("tbody");
+        tbody.innerHTML = '';
+        teams.forEach(team => {
+            let row = document.createElement("tr");
+            let cell = document.createElement("td"); // create cell
+            cell.textContent = team.name; // add context
+            row.append(cell) // append
+
+            cell = document.createElement("td");
+            cell.textContent = team.W;
+            row.append(cell)
+
+            cell = document.createElement("td");
+            cell.textContent = team.L;
+            row.append(cell)
+
+            cell = document.createElement("td");
+            cell.textContent = team.PTS;
+            row.appendChild(cell);
+            tbody.append(row);
+        });
+    }
+
+    const losses = document.querySelector("#loses");
+    losses.addEventListener('click', (el) => {
+        // let sortOrder = el.target.getAttribute("sortOrder")
+        sortLosses(el.target.id)
+    })
+
+    function sortLosses(col){
+        let sortOrder = col.getAttribute("sortOrder")
+        if(sortOrder == 'DES'){
+            if (col.id == 'loses')
+            teams.sort((teamA, teamB)=>teamB.L-teamA.L);
+            document.querySelector("#loses").setAttribute('sortOrder', 'ASC')
+        }else{
+            teams.sort((teamA, teamB)=>teamA.L-teamB.L);
+            document.querySelector("#loses").setAttribute('sortOrder', 'DES')
+        }
+
+        createTable(teams)
+    }
+
+    createTable(teams)
+    </script>
+</body>
+</html>
