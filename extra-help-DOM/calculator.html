@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        /* #answer {
+            background-color: aliceblue;
+        } */
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <form id="form">
+    <!-- <div>
+        <form id="form">
+            <textarea id="num"></textarea>
+        </form>
+    </div> -->
+        <br>
+        <div id="buttons">
+            <button type="add" class="button">+</button>
+            <button type="sub" class="button">-</button>
+            <button type="mul" class="button">*</button>
+            <button type="div" class="button">/</button>
+        </div>
+        <br>
+        <div id="nums">
+            <button type="one" class="button">1</button>
+            <button type="two" class="button">2</button>
+            <button type="three" class="button">3</button>
+            <br>
+            <button type="four" class="button">4</button>
+            <button type="five" class="button">5</button>
+            <button type="six" class="button">6</button>
+            <br>
+            <button type="seven" class="button">7</button>
+            <button type="eight" class="button">8</button>
+            <button type="nine" class="button">9</button>
+            <br>
+            <button type="zero" class="button">0</button>
+        </div>
+        <br>
+        <div>
+            <button type="submit" class="button">Enter</button>
+        </div>
+        <br>
+        <div class="block">
+            <!-- where results are displayed -->
+            <p id="answer">
+                Your Answer: 
+            </p>
+        </div>
+    </form>
+
+    <script>
+        /*
+        add eventListeners too all buttons
+        number buttons - p#answer append number
+        sign buttons - p#answer append sign
+        calculate function
+            get all elements from p#answer
+            parse number into ints, figure out sign
+            calculate value??
+        */
+        let currVal = 0;
+        let currNum = 0; // the first val
+        let nextNum = 0; // the second val
+
+        let val1 = 0;
+        let val2 = 0;
+        let sign = '';
+        // these are ints, but going into a string
+        // idk what im trying to do here
+
+        // using number buttons, add to p
+        // i feel like i could use a loop here, idk when im doing
+        form.addEventListener('one',(e) => {
+            currNum = document.querySelector('answer')
+            currNum.innerHTML("1") // innerHTML or textContent
+            currVal = (currVal*10) + 1
+            answer.append(currNum)
+
+            val1 = 1
+            val2 = 0
+        })
+
+        form.addEventListener('two',(e) => {
+            currNum = document.querySelector('answer')
+            currNum.textContent("2")
+            currVal = (currVal*10) + 2
+            answer.append(currNum)
+        })
+
+        form.addEventListener('three',(e) => {
+            currNum = document.querySelector('answer')
+            currNum.textContent("3")
+            currVal = (currVal*10) + 3
+            answer.append(currNum)
+        })
+
+        form.addEventListener('four',(e) => {
+            currNum = document.querySelector('answer')
+            currNum.textContent("4")
+            currVal = (currVal*10) + 4
+            answer.append(currNum)
+        })
+
+        form.addEventListener('five',(e) => {
+            currNum = document.querySelector('answer')
+            currNum.textContent("5")
+            currVal = (currVal*10) + 5
+            answer.append(currNum)
+        })
+
+        form.addEventListener('six',(e) => {
+            currNum = document.querySelector('answer')
+            currNum.textContent("6")
+            currVal = (currVal*10) + 6
+            answer.append(currNum)
+        })
+
+        form.addEventListener('seven',(e) => {
+            currNum = document.querySelector('answer')
+            currNum.textContent("7")
+            currVal = (currVal*10) + 7
+            answer.append(currNum)
+        })
+
+        form.addEventListener('eight',(e) => {
+            currNum = document.querySelector('answer')
+            currNum.textContent("8")
+            currVal = (currVal*10) + 8
+            answer.append(currNum)
+        })
+
+        form.addEventListener('nine',(e) => {
+            currNum = document.querySelector('answer')
+            currNum.textContent("9")
+            currVal = (currVal*10) + 9
+            answer.append(currNum)
+        })
+
+        form.addEventListener('zero',(e) => {
+            currNum = document.querySelector('answer')
+            currNum.textContent("0")
+            currVal = (currVal*10) + 0
+            answer.append(currNum)
+        })
+
+        // using add/subtract/multiply/divide
+        form.addEventListener('add', (e) => {
+            let ans = document.querySelector('answer')
+            ans.textContent = '+'
+
+            sign = '+'
+        })
+
+        form.addEventListener('sub', (e) => {
+            let ans = document.querySelector('answer')
+            ans.textContent = '-'
+
+            sign = "-"
+        })
+
+        form.addEventListener('mul', (e) => {
+            let ans = document.querySelector('answer')
+            ans.textContent = '*'
+
+            sign = "*"
+        })
+
+        form.addEventListener('div', (e) => {
+            let ans = document.querySelector('answer')
+            ans.textContent = '/'
+
+            sign = "/"
+        })
+
+        // actually do the math
+        function calculate(){
+            calc = document.querySelectorAll('answer')
+            if(sign === "+"){
+                return num1 + num2
+            }else if(sign === "+"){
+                return num1 + num2
+            }else if(sign === "+"){
+                return num1 + num2
+            }else if(sign === "+"){
+                return num1 + num2
+            }
+        }
+
+        // 
+        form.addEventListener('submit', (e) => {
+            calculate();
+        })
+    </script>
+</body>
+</html>
