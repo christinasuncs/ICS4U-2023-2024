@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dakar Web Site</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="index.html">
+            Dakar Race Results
+          </a>
+        </div>
+    </nav>
+
+    <!-- Add Score -->
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Add Score</h1>
+            <!-- Form with nput fields for entering score -->
+            <form id="scoreForm" class="mb-4">
+                <div class="field is-horizontal">
+                    <div class="field-body">
+                        <!-- Player name -->
+                        <div class="field">
+                            <label class="label">Player Name:</label>
+                            <div class="control">
+                                <input id="nameInput" class="input" type="text" required>
+                            </div>
+                        </div>
+                        <!-- Date -->
+                        <div class="field">
+                            <label class="label">Date:</label>
+                            <div class="control">
+                                <input id="dateInput" class="input" type="date" required>
+                            </div>
+                        </div>
+                        <!-- Country -->
+                        <div class="field">
+                            <label class="label">Country:</label>
+                            <div class="control">
+                                <div class="select">
+                                    <select id="nationalityInput" required></select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Vehicle Type -->
+                        <div class="field">
+                            <label class="label" style="width: 100px;">Vehicle Type:</label>
+                            <div class="control">
+                                <div class="select">
+                                    <select id="vehicle" required>
+                                        <option value="Car">Car</option>
+                                        <option value="Truck">Truck</option>
+                                        <option value="Bike">Bike</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Race Time Hours -->
+                        <div class="field">
+                            <label class="label">Race Time (Hour):</label>
+                            <div class="control">
+                                <input id="raceTimeHourInput" class="input" type="number" min="0" required>
+                            </div>
+                        </div>
+                        <!-- Race Time Minutes -->
+                        <div class="field">
+                            <label class="label">Race Time (Mins):</label>
+                            <div class="control">
+                                <input id="raceTimeMinsInput" class="input" type="number" min="0" max="60" required>
+                            </div>
+                        </div>
+                        <!-- Race Time Seconds -->
+                        <div class="field">
+                            <label class="label">Race Time (Seconds):</label>
+                            <div class="control">
+                                <input id="raceTimeSecondsInput" class="input" type="number" min="0" max="60" required>
+                            </div>
+                        </div>
+                        <!-- Submit Button -->
+                        <div class="field">
+                            <label class="label"></label>
+                            <div class="control" style="margin-top: 30px;">
+                                <button id="addScoreButton" type="submit" class="button is-primary">Add Score</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    
+    <script src="js/add-score.js"></script>
+    </body>
+</html>

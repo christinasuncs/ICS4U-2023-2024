@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dakar Web Site</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="index.html">
+            Dakar Race Results
+          </a>
+
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a href="addScore.html" class="navbar-item">
+                    Add Score
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <!-- Display the current countries -->
+            <h1 id="countryTitle" class="title"></h1>
+
+            <!-- Filter by date -->
+            <div class="field is-horizontal">
+                <div class="field">
+                    <label class="label">Filter by Date:</label>
+                </div>
+                <div class="field" style="margin-left: 1%;">
+                    <div class="control">
+                        <input id="filterDateInput" class="input" type="date">
+                    </div>
+                </div>
+                <div class="field" style="margin-left: 1%;">
+                    <div class="control">
+                        <button id="filterByDateButton" class="button is-info">Filter</button>
+                    </div>
+                </div>
+                <div class="field" style="margin-left: 1%;">
+                    <div class="control">
+                        <span id="dateStatus"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter by vehicle -->
+            <div class="field is-horizontal">
+                <div class="field">
+                    <label class="label">Filter by Vehicle:</label>
+                </div>
+                <div class="field" style="margin-left: 1%;">
+                    <div class="control">
+                        <div class="select">
+                            <select id="filterVehicleInput" required>
+                                <option value="None">None</option>
+                                <option value="Car">Car</option>
+                                <option value="Truck">Truck</option>
+                                <option value="Bike">Bike</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field" style="margin-left: 1%;">
+                    <div class="control">
+                        <button id="filterByVehicleButton" class="button is-info">Filter</button>
+                    </div>
+                </div>
+                <div class="field" style="margin-left: 1%;">
+                    <div class="control">
+                        <span id="vehicleStatus"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reset all filters -->
+            <div class="field is-horizontal">
+                <div class="field">
+                    <label class="label">Reset All Filters:</label>
+                </div>
+                <div class="field" style="margin-left: 1%;">
+                    <div class="control">
+                        <button id="resetFiltersButton" class="button is-warning" click="resetFilters">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Scores table -->
+            <table id="scoresTable" class="table is-fullwidth is-hoverable is-striped">
+                <thead>
+                    <tr>
+                        <th id="playerName" sortOrder="">Name</th>
+                        <th id="playerTime" sortOrder="">Date</th>
+                        <th id="playerCountry" sortOrder="">Country</th>
+                        <th id="playerVehicle" sortOrder="">Vehicle</th>
+                        <th id="raceTime" sorted="">Race Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <!-- Pagination -->
+            <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+                <ul id="pagination" class="pagination-list"></ul>
+            </nav>
+        </div>
+
+    </section>
+
+
+
+    <script src="js/app.js"></script>
+    <script>
+        // Responsive NavBar
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Get all "navbar-burger" elements
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+            // Add a click event on each of them
+            $navbarBurgers.forEach( el => {
+                el.addEventListener('click', () => {
+
+                    // Get the target from the "data-target" attribute
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+                });
+            });
+        });
+    </script>
+    </body>
+</html>

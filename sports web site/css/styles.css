@@ -1,0 +1,79 @@
+/* Navigation bar styles */
+.navbar,
+.navbar-menu {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+.navbar-burger{
+    color: #fff;
+}
+
+.navbar-brand,
+.navbar-item {
+    font-size: 1.5 rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar-item:hover {
+    color: yellow;
+}
+
+.section {
+    margin-top: 20px;
+}
+
+/* Styles for the form inputs */
+.input {
+    width: 200px;
+}
+
+
+/* Styles for the scores table */
+#scoresTable {
+    margin-top: 20px;
+}
+
+/* Styles for table header */
+th {
+    cursor: pointer;
+}
+
+/* Highlight table header on hover */
+th:hover {
+    background-color: #f5f5f5;
+}
+
+/* Styles for table rows */
+td {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Styles for pagination */
+.pagination-list {
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Styles for pagination links */
+.pagination-link {
+    border-radius: 4px;
+    margin: 0 3px;
+}
+
+/* Active pagination link */
+.pagination-link.is-current {
+    background-color: #3273dc;
+    color: #fff;
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+/* Reduce input width for smaller screens */
+    .input {
+        width: 150px;
+    }
+}
