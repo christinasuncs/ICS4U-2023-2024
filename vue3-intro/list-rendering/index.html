@@ -28,7 +28,8 @@
                   <!-- <li v-for="x in details">{{ x }}</li> -->
                </ul>
                <ul>
-                  <li :key="variants.id" v-for="var in variants" >{{var}}</li>
+                  <li :key = "variant.id" v-for = "variant in variants">{{variant.id}}</li>
+                  <li :key = "variant.id" v-for = "variant in variants">{{variant.color}}</li>
                </ul>
                <ul>
                   <li v-for="size in sizes">{{size}}</li>
