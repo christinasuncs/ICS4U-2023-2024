@@ -14,7 +14,8 @@ const app = Vue.createApp({
          styles: {
             color: 'red',
             fontSize: '14px'
-         }
+         },
+         activeClass: true
       }
    },
    methods: {
