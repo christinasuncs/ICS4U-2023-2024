@@ -3,9 +3,8 @@ const app = Vue.createApp({
       return {
          cart: 0,
          premium: true,
-         detail: "This is a description of the product"
+         details: "This is a detailed description of the product"
       }
    },
-   methods: {}
+   methods: {},
 })
-app.mount('#app');
