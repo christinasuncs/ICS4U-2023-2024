@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <title>Vue Mastery</title>
+   <!-- Import Styles -->
+   <link rel="stylesheet" href="./assets/styles.css" />
+   <!-- Import Vue.js -->
+   <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+</head>
+
+<body>
+   <div id="app">
+      <div class="nav-bar"></div>
+
+      <div >
+         <select id="filterByCatagoryButton" required>
+            <option value="None">None</option>
+            <option value="Socks">Socks</option>
+            <option value="Shoes">Shoes</option>
+            <option value="tv">tv</option>
+        </select>
+        <button @click="filterByCatagory" class="button">Filter</button>
+      </div>
+
+      <div class="cart">Cart({{ cart.length }})</div>
+      <product-display :premium="premium" :cart="cart" @add-to-cart="updateCart" @remove-cart="removeFromCart" v-if="catagory == 'Socks' || catagory == 'None'"></product-display>
+      <shoe-display :premium="premium" :cart="cart" @add-to-cart="updateCart" @remove-cart="removeFromCart" v-if="catagory == 'Shoes' || catagory == 'None'"></shoe-display>
+      <tv-display :premium="premium" :cart="cart" @add-to-cart="updateCart" @remove-cart="removeFromCart" v-if="catagory == 'tv' || catagory == 'None'"></tv-display>
+   </div>
+
+   <!-- Import App -->
+   <script src="./main.js"></script>
+
+   <!-- Import Components -->
+   <script src="./components/ProductDisplay.js"></script>
+   <script src="./components/ShoesDisplay.js"></script>
+   <script src="./components/TVDisplay.js"></script>
+
+   <!-- Mount App -->
+   <script>
+      const mountedApp = app.mount('#app')
+   </script>
+</body>
+
+</html>
